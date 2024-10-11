@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invitation Card</title>
+    <link rel="stylesheet" href="../../../public/stylesheets/emailTemplate/anniversaryTemplate.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            padding: 20px;
+        }
+    </style>
+    <title>
+        <%= subject %>
+    </title>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Hello, <%= name %>
+        </h2>
+        <p>
+            <%= message %>
+        </p>
+
+        <div class="image-wrapper">
+            <img src="../../../public/images/emailTemplate/InivitatingCard.png" alt="Invitation Card" />
+        </div>
+    </div>
+</body>
+
+</html>

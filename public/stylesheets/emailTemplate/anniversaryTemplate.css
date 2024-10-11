@@ -1,0 +1,18 @@
+.image-wrapper {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 0 15px; /* Horizontal padding for mobile and tablet */
+}
+
+.image-wrapper img {
+    width: 100%;
+    height: auto;
+}
+
+/* Media query for larger screens (PC) */
+@media (min-width: 1024px) {
+    .image-wrapper {
+        padding: 0; /* Remove padding on larger screens */
+    }
+}

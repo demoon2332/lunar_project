@@ -14,24 +14,35 @@
 
   </head>
   <body>
+    <script>
+      const data = JSON.parse(`{{{questions}}}`)
+      console.log("DATA")
+      console.log(data)
+
+      // Store data in sessionStorage
+      sessionStorage.setItem("questions", JSON.stringify(data));
+    </script>
     <div class="wrapper">
       <!-- Preloader -->
     <div id="preloader">
       <div class="spinner">
-        <div class="rect1"></div>
-        <div class="rect2"></div>
-        <div class="rect3"></div>
-        <div class="rect4"></div>
-        <div class="rect5"></div>
+        <div class="rect rect1"></div>
+        <div class="rect rect2"></div>
+        <div class="rect rect3"></div>
+        <div class="rect rect4"></div>
+        <div class="rect rect5"></div>
       </div>
   </div>
+   <div id="loadingPopup">
+        Loading, please wait...
+    </div>
       <div id="bg"></div>
       <div class="content">
         <header>
-          <h2> Chào cậu !  </h2>
+          <h2> Hi Thao !  </h2>
           
-          <h2>            Chào mừng bạn đến với trang web này    </h2>
-          <h4> Cậu thấy trang web này như thế nào ? :v </h4>
+          <h2> You're invited to this: </h2>
+          <h4> Can't wait to see you there. Here is the detail </h4>
         </header>
         <button id="yes" type="button" class="btn btn-danger btn-lg"> Đẹp, dễ thương nha :>  <333 </button>
         <button id="no" type="button" class="btn btn-info btn-lg"> Xấu quắc :333 </button>

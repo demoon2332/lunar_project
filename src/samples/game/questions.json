@@ -1,0 +1,60 @@
+[
+    {
+      "id":"1",
+      "formId":"a7e6c7cb2f43e99e0f9efd86fc3ebb5a",
+      "name": "What is the date of anniversary?",
+      "type":"date",
+      "answers": [],
+      "hint": "This is a must-remember thing. So sad to have a hint for it",
+      "correctAnswer":"8301188dd54f4ef058a51cb377585056d45b80f3172100e3977082128f02ea52"
+    },
+    {
+      "id":"2",
+      "name": "Enter your boyfriend phone number",
+      "type":"text",
+      "imageUrl": "images/game/cuteCat.jpg",
+      "answers": [],
+      "hint": "0901.....",
+      "correctAnswer":"a4e680692ef5f087b40bc8ea5ed8dfb9dc6729c86559e262ec5f1a08f975eeb2"
+    },
+    {
+      "id":"3",
+      "name": "What is the lastest Mc's Donald Happy Meal collection that you go with him?",
+      "type":"radio",
+      "answers": [
+        { "id": 1, "value": "Pet Simulators" },
+        { "id": 2, "value": "Minion 4" },
+        { "id": 3, "value": "Crocs" },
+        { "id": 4, "value": "Mario Kart" }
+      ],
+      "hint": "This is a must-remember thing. So sad to have a hint for it",
+      "correctAnswer":"70ce3476ce59b87ef567c45fab4742754f021df14eeba02b1df38daf99c62663"
+    },
+    {
+      "id":"4",
+      "name": "What is your favorite color?",
+      "type":"radio",
+      "answers": [
+        { "id": 1, "value": "Red" },
+        { "id": 2, "value": "Blue" },
+        { "id": 3, "value": "Orange" },
+        {"id": 4, "value":"Yellow"},
+        { "id": 5, "value": "Green" },
+        { "id": 6, "value": "Pink" },
+        {"id": 7, "value":"Purple"},
+        {"id": 8, "value":"Brown"},
+        { "id": 9, "value": "Violet" },
+        { "id": 10, "value": "Black" },
+        { "id": 11, "value": "White" }
+      ],
+      "hint": "This is a must-remember thing. So sad to have a hint for it",
+      "correctAnswer":"c685a2c9bab235ccdd2ab0ea92281a521c8aaf37895493d080070ea00fc7f5d7"
+    },
+    {
+      "id":"5",
+      "name": "Thank you for your answers",
+      "type":"no-input",
+      "answers": [],
+      "correctAnswer":""
+    }
+  ]

@@ -36,6 +36,9 @@ import bingoGameRouter from './src/routes/bingoGame/index.js';
 // LunaFolio
 import lunafolioRouter from './src/routes/lunarfolio/index.js';
 
+// Form-Servey router
+import formRouter from './src/routes/form/index.js';
+
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
@@ -96,6 +99,8 @@ app.use('/bingoGame',bingoGameRouter)
 
 // lunafolio
 app.use('/lunafolio',lunafolioRouter)
+
+app.use('/form',formRouter)
 
 
 // catch 404 and forward to error handler

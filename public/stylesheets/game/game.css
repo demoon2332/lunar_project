@@ -3,7 +3,7 @@
     z-index: 3;
     overflow: visible;
     height: 100%;
-    display: none;
+    transition: 1s all;
   }
   #no{
     position: absolute;
@@ -29,10 +29,10 @@
   /* height: 100vh; */
   z-index: 0;
   background-repeat: no-repeat;
-  background-image: url(../../images/game/bg3.jpg);
+  background-image: url(../../images/game/monoBg2.jpg);
   background-size: cover;
   background-position: 50%;
-  -webkit-filter: blur(3px);
+  -webkit-filter: blur(4px);
 }
 .swal2-title, .swal2-content{
   color: rgb(52, 53, 53) !important;
@@ -100,7 +100,9 @@ header h4 {
   -webkit-backface-visibility: hidden;    
   animation: rotate 6s linear infinite;
   animation-delay: 0.5s;
+  transition: 1s ease-out;
 }
+
 .rotate_icon_wrapper{
  overflow: hidden;
 }

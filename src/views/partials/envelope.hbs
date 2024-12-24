@@ -1,0 +1,24 @@
+<head>
+  <link rel="stylesheet" href="./stylesheets/partials/envelope.css">
+</head>
+<body>
+  <div class="enve-container">
+    <div class="enve-wrapper">
+      <div class="envelope" onclick="toggleCard()">
+        <div class="letter">
+          <div class="enve-letter">
+            <div class="enve-body">
+              <span class="enve-close" onclick="toggleCard()">Made by DucTrong</span>
+              <img class="enve-img" src="{{imageSrc}}" alt="Envelope Image"> 
+            </div>
+          </div>
+        </div>
+        <div class="enve-shadow"></div>
+      </div>
+    </div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.6/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.4.0/CSSRulePlugin.min.js"></script>
+    <script src="./javascripts/partials/envelope.js"></script>
+  </div>
+</body>

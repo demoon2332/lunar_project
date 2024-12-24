@@ -2,6 +2,10 @@
 var mainAudio = new Audio("sound/sound.mp3");
 mainAudio.volume = 0.5;
 const questions = JSON.parse(sessionStorage.getItem("questions"))
+const info = JSON.parse(sessionStorage.getItem("information"))
+
+console.log("Here is the information")
+console.log(info)
 
 var index = 0;
 const question1 = questions[0];
@@ -18,7 +22,7 @@ $(document).ready(async function () {
     allowOutsideClick: false, 
     title: "Cậu ơi ",
     text: "Tớ có điều asasasy muốn hỏi cậu.",
-    imageUrl: "images/game/cuteCat.jpg",
+    imageUrl: info.avatarUrl,
     imageWidth: 300,
     imageHeight: 300,
     background: '#fff url("images/iput-bg.jpg")',
@@ -27,14 +31,25 @@ $(document).ready(async function () {
 
   setTimeout(function () {
     //basicDialog();
-    $(".spinner").fadeOut();
-    $("#preloader").delay(350).fadeOut("slow");
-    $("body").delay(350).css({
-      overflow: "visible",
+    $(".spinner").delay(1000).fadeOut();
+      /*
+      const loadingBackground = document.getElementById('preloader');
+      console.log("loading background")
+      console.log(loadingBackground);
+      loadingBackground.style.backgroundColor = "red";
+      loadingBackground.style.backgroundImage = 'url("https://drive.google.com/file/d/1o0PHiinoY5iFDc3v87TgwYqzRxJPvo1C/view?usp=sharing")';
+      loadingBackground.style.backgroundSize = 'cover';
+      loadingBackground.style.backgroundPosition = 'center';
+      */
+    $("#preloader").delay(1500).fadeOut("slow");
+    $("body").delay(550).css({
+      overflow: "visible", 
     });
-  }, 600);
-  startDialogs();
+  }, 1500);
+  //startDialogs();
 });
+
+console.log("GO")
 
 async function findDialog(question) {
   if(index < questions.length-1){
@@ -209,10 +224,10 @@ async function finalDialog() {
   });
 
   if (accept) {
-    document.querySelector(".content").style.display = "block";
+    document.querySelector(".content").style.opacity = 1;
     mainAudio.play();
     // Call fetchData here
-    const response = await fetchData();
+    const response = await fetchData();+
     console.log("Here is the responsee")
     console.log(response);
     if(response){
@@ -332,7 +347,7 @@ $("#yes").click(function () {
       Swal.fire({
         width: 900,
         confirmButtonText: "Oke <3",
-        imageUrl: "images/form/InivitatingCard.png",
+        imageUrl: info.cardImageUrl,
         imageWidth: 800,
         background: '#fff url("img/iput-bg.jpg")',
         title: "Tớ biết mà",
@@ -342,7 +357,7 @@ $("#yes").click(function () {
           // window.location = 'http://fb.com';
           // Get the current host (e.g., 'localhost:8089')
           //const currentHost = window.location.host;
-          const currentHost = "https://www.facebook.com/ndtrong247";
+          const currentHost = info.redirectLink;
 
           // Create a new URL using the current host
           //const newURL = `//${currentHost}`;

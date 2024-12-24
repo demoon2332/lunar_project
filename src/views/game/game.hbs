@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
+    <base href="/">
+    {{!-- base href is important when using get("/:id") instead of get("/") --}}
     <link rel="stylesheet" href="./stylesheets/game/game.css">
     <link rel="stylesheet" href="./stylesheets/game/game_spinload.css">
     <link rel="stylesheet" type="text/css" href=" https://fonts.googleapis.com/css?family=Pacifico" />
@@ -15,12 +17,12 @@
   </head>
   <body>
     <script>
-      const data = JSON.parse(`{{{questions}}}`)
-      console.log("DATA")
-      console.log(data)
+      const questionData = JSON.parse(`{{{questions}}}`)
+      const informationData = JSON.parse(`{{{information}}}`)
 
       // Store data in sessionStorage
-      sessionStorage.setItem("questions", JSON.stringify(data));
+      sessionStorage.setItem("information", JSON.stringify(informationData));
+      sessionStorage.setItem("questions", JSON.stringify(questionData));
     </script>
     <div class="wrapper">
       <!-- Preloader -->
@@ -32,7 +34,7 @@
         <div class="rect rect4"></div>
         <div class="rect rect5"></div>
       </div>
-  </div>
+    </div>
    <div id="loadingPopup">
         Loading, please wait...
     </div>
@@ -47,6 +49,9 @@
         <button id="yes" type="button" class="btn btn-danger btn-lg"> Đẹp, dễ thương nha :>  <333 </button>
         <button id="no" type="button" class="btn btn-info btn-lg"> Xấu quắc :333 </button>
       </div>
+      <div class="letter-component">
+        {{> envelope imageSrc="images/game/logo.png"}}
+      </div>
 
           <div class="back_btn_wrapper">
             <a href="../">
@@ -57,7 +62,7 @@
           
 
           <div class="rotate_icon_wrapper">
-            <img class="rotate_icon" onclick="playPause(this)" src="images/game/logo_nobg_2.png">
+            <img class="rotate_icon" onclick="playPause(this)" src="images/game/logo.png">
           </div>
     </div>
     {{!-- <audio src="" autoplay></audio> --}}
@@ -72,9 +77,5 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
     <script src="./javascripts/game/game.js"></script>
-    <script>
-
-    </script>
-
   </body>
 </html>

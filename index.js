@@ -9,6 +9,7 @@ import rateLimit from 'express-rate-limit';
 import './src/dbconnect.js';
 import dotenv from 'dotenv';
 import { fileURLToPath } from 'url';
+import hbs from 'hbs';
 
 dotenv.config();
 
@@ -47,6 +48,8 @@ const app = express();
 // view engine setup
 app.set('views', path.join(__dirname, './src/views'));
 app.set('view engine', 'hbs');
+
+hbs.registerPartials(path.join(__dirname, './src/views','partials'))
 
 app.use(logger('dev'));
 app.use(express.json());

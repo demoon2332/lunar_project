@@ -10,6 +10,8 @@ import './src/dbconnect.js';
 import dotenv from 'dotenv';
 import { fileURLToPath } from 'url';
 import hbs from 'hbs';
+import { logError, logInfo } from './src/services/logger/logger.js';
+
 
 dotenv.config();
 
@@ -39,6 +41,7 @@ import lunafolioRouter from './src/routes/lunarfolio/index.js';
 
 // Form-Servey router
 import formRouter from './src/routes/form/index.js';
+
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -118,11 +121,10 @@ app.use(function(err, req, res, next) {
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
 
-
-
-
   // render the error page
   res.status(err.status || 500);
+  logError(err.message, err.stack);
+  console.log("Error stack: ",err.stack)
   res.render('error');
 });
 
@@ -130,6 +132,7 @@ app.use(function(err, req, res, next) {
 
 const port = process.env.PORT || 3000
 app.listen(port, () => {
+  logInfo("Server started on port ${port}");
   console.log(`Server started on port ${port}`);
 });
 // 

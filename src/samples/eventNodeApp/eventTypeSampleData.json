@@ -1,0 +1,18 @@
+[
+    {
+        "id":1,
+        "name":"Normal"
+    },
+    {
+        "id":2,
+        "name":"Birthday"
+    },
+    {
+        "id":3,
+        "name":"Anniversary"
+    },
+    {
+        "id":4,
+        "name":"Holiday"
+    }
+]

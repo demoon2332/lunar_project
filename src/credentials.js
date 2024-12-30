@@ -1,4 +1,4 @@
-const database = 'Greenstore'
+const database = 'Lunar'
 export const credentials = { cookieSecret: 'doremon',
 mongo: {
     development: {

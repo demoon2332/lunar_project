@@ -6,15 +6,18 @@ import eventTypeRouter from './eventType.js';
 import eventFrequenceTypeRouter from './frequenceType.js';
 
 //services
-import InitializationService from '../../services/eventNoteAppService/initializationService.js';
+import InitializationService from '../../services/mongoDatabaseService/initializationService.js';
 
 //models
-import { sendResponse } from '../../share/utils.js';
+import { sendResponse } from '../../utils/utils.js';
 import { logError } from '../../services/logger/logger.js';
+import EventType from '../../models/eventNoteApp/eventType.js';
+import FrequenceType from '../../models/eventNoteApp/frequenceType.js';
+import Event from '../../models/eventNoteApp/event.js';
 
 const router = express.Router();
 
-
+const directory = "eventNoteApp";
 
 router.get('/', function(req,res,next){
     res.render('eventNoteApp/index')
@@ -31,16 +34,16 @@ router.get('/', function (req, res, next) {
 router.get('/init',  async (req,res,next) =>{
     try {
         const models = [
-            {model: EventType, pathSampleFile: "eventTypeSampleData.json"},
-            {model: FrequenceType, pathSampleFile: "frequenceTypeSampleData.json"},
-            {model: Event, pathSampleFile: "eventSampleData.json"}
+            {model: EventType, pathSampleFile: directory+"/eventTypeSampleData.json"},
+            {model: FrequenceType, pathSampleFile: directory+"/frequenceTypeSampleData.json"},
+            {model: Event, pathSampleFile: directory+"/eventSampleData.json"}
         ]
         await InitializationService.initializeModelsInorder(models);
         
         return sendResponse(res, 200, 'All models initialized successfully.');
     }catch(error){
         logError(error.message, error.stack);
-        return sendResponse(res, 500, 'Failed to initialize models',{error: error.message})
+        return sendResponse(res, 500, 'Failed to initialize eventNodeApp models',{error: error.message})
     }
 })
 

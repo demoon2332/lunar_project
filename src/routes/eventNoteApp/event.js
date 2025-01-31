@@ -3,7 +3,7 @@ const router = express.Router();
 
 // models
 import Event from '../../models/eventNoteApp/event.js'
-import { sendResponse } from '../../share/utils.js';
+import { sendResponse } from '../../utils/utils.js';
 
 //sample data
 
@@ -17,8 +17,8 @@ router.get('/:id', async (req,res)=>{
         }
         return sendResponse(res,200,"fetch successfully",result);
     } catch (error){
-        console.error('Error initializing events:', error);
-        return sendResponse(res, 500, 'Failed to initialize events sample data.', { error: error.message });
+        console.error('Error while fetching events:', error);
+        return sendResponse(res, 500, 'Error while fetching events.', { error: error.message });
     }
 })
 

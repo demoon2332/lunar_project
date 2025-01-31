@@ -30,9 +30,6 @@ import GameRouter from './src/routes/game/games.js';
 //Tarot Api
 import tarotRouter from './src/routes/tarot/index.js';
 
-// Schedule 
-import scheduleRouter from './src/routes/schedule/index.js';
-
 // BingoGame
 import bingoGameRouter from './src/routes/bingoGame/index.js';
 
@@ -41,6 +38,9 @@ import lunafolioRouter from './src/routes/lunarfolio/index.js';
 
 // Form-Servey router
 import formRouter from './src/routes/form/index.js';
+
+//Event note app (replace the schedule app )
+import eventNoteRouter from './src/routes/eventNoteApp/index.js'
 
 
 const __filename = fileURLToPath(import.meta.url);
@@ -97,16 +97,15 @@ app.use('/game',GameRouter)
 //tarot routes
 app.use('/tarot',tarotRouter)
 
-// schedule routes
-app.use('/schedule',scheduleRouter)
-
-// schedule routes
+// bingo routes (Loto game)
 app.use('/bingoGame',bingoGameRouter)
 
 // lunafolio
 app.use('/lunafolio',lunafolioRouter)
 
 app.use('/form',formRouter)
+
+app.use('/event',eventNoteRouter)
 
 
 // catch 404 and forward to error handler

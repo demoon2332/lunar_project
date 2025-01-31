@@ -1,0 +1,32 @@
+[
+    {
+        "startDate": "2001-03-19T00:00:00.000Z",
+        "endDate": "2001-03-19T23:59:59.999Z",
+        "title": "LeThao birthday",
+        "description": "Today is LeThao birthday",
+        "priority": 1,
+        "needEmailNotify": true,
+        "frequenceTypeId": "7",
+        "eventTypeId": "1"
+    },
+    {
+        "startDate": "2023-12-25T00:00:00.000Z",
+        "endDate": "2023-12-25T23:59:59.999Z",
+        "title": "Anniversary",
+        "description": "Happy Anniversary",
+        "priority": 1,
+        "needEmailNotify": true,
+        "frequenceTypeId": "7",
+        "eventTypeId": "2"
+    },
+    {
+        "startDate": "2025-02-07T00:00:00.000Z",
+        "endDate": "2025-12-25T23:59:59.999Z",
+        "title": "Blood Donation",
+        "description": "Today is a day that you can go for blood donation. Remember to update the date of this date after blood donation.",
+        "priority": 1,
+        "needEmailNotify": true,
+        "frequenceTypeId": "7",
+        "eventTypeId": "2"
+    }
+]

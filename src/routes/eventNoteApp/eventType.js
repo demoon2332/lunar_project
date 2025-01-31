@@ -16,7 +16,7 @@ router.get('/:id', async (req,res)=>{
         return sendResponse(res,200,"fetch successfully",result);
     } catch (error){
         console.error('Error initializing eventTypes:', error);
-        return sendResponse(res, 500, 'Failed to initialize eventTypes sample data.', { error: error.message });
+        return sendResponse(res, 500, 'Error while fetching eventTypes.', { error: error.message });
     }
 })
 

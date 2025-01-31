@@ -1,15 +1,16 @@
 import mongoose from 'mongoose';
 
-const EventSchema = new mongoose.Schema({
+const { Schema } = mongoose;
+
+const EventSchema = new Schema({
     startDate: Date,
-    endDate: date,
+    endDate: Date,
     title: String,
     description: String,
     priority: Number,
-    frequenceType: Number,
     needEmailNotify: Boolean,
-    frequenceTypeId: { type: Schema.Types.ObjectId, ref: 'FrequenceType', required: true },
-    eventTypeId: { type: Schema.Types.ObjectId, ref: 'EventType', required: true },
-})
+    frequenceTypeId: { type: Number , required: true },
+    eventTypeId: { type: Number, required: true },
+});
 
 export default mongoose.model('Event', EventSchema);
